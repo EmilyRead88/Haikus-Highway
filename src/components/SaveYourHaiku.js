@@ -5,6 +5,7 @@ import { useState } from 'react';
 const SaveYourHaiku = (props)=>{
 
      const [saveButton, setSaveButton] = useState("Save Your Haiku");
+     const [buttonEnabled, setButtonEnabled] = useState(false)
      const database = getDatabase(firebase);
      const dbRef = ref(database);
      
@@ -12,6 +13,7 @@ const SaveYourHaiku = (props)=>{
      const handleClick = ()=> {
           push(dbRef, props.currentHaiku);
           setSaveButton("Saved");
+          setButtonEnabled(true);
      }
 
 
@@ -19,6 +21,7 @@ const SaveYourHaiku = (props)=>{
      return(
           <div className="buttonContainer">
                <button
+               disabled= {buttonEnabled}
                onClick= {handleClick} className="saveButton">{saveButton}</button>
           </div>
      )     
