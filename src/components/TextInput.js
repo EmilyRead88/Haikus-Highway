@@ -57,7 +57,7 @@ const TextInput = (props) => {
     return (
         <>
             <form className={`textInputForm ${ props.className }`} onSubmit={handleSubmit} id="form">
-                <input onChange={handleChange} type="text" id="input" name="input" />
+                <input onChange={handleChange} type="text" id="input" name="input" value={userInput}/>
                 <label className='sr-only' htmlFor="input">Enter a word for the haiku:</label>
                 <button className="submitButton" disabled={ disableButton(userInput) }>Submit</button>
             </form>
