@@ -107,7 +107,7 @@ const WordList = (props) => {
     }
 
     return (
-        <div className="WordBox">
+        <>
             <ul className="wordListContainer">
                 {
                     filteredWordList[0]
@@ -127,7 +127,7 @@ const WordList = (props) => {
                     ?<TextInput className="haikuPage" allowedSyllables={ props.allowedSyllables } customFunction={ handleUserInput } />
                     :null
             }
-        </div>
+        </>
     )
 }
 
