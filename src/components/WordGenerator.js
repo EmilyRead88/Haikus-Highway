@@ -55,26 +55,21 @@ const WordGenerator = (props) => {
         // console.log(`allowed syllables is ${allowedSyllables}`);
     }, [currentSyllables]);
 
-
+    //after the remove button is clicked, receive the parameters representing each line of the haiku, and set the current Haiku to each line
     const removeFromHaiku = (haikuParam, haikuParam2, haikuParam3) => {
         setCurrentHaiku([[...haikuParam], [...haikuParam2], [...haikuParam3]]);
-        // now need to figure out how to setSyllableCount-
-        //maybe look at whichLine to see if we get the syllables to be included here as well - THEN we can setCurrentSYllables here to loop through all the words and add up the syllables
-
-        // console.log(currentHaiku);
+        
+        //based on the newly updated haiku, go through each line of the array and inside each word, and get the sum of total syllables
         let sum = 0
         currentHaiku.forEach((array) => {
             for (let i = 0; i < array.length; i++) {
                 const syllables = array[i].syllables;
                 sum += syllables
             }
-            // console.log(`the sum is ${sum}`);
             setCurrentSyllables(sum);
         })
         setRemoveClicks(removeClicks + 1);
     }
-
-    // console.log(`current syllables is ${currentSyllables}`);
 
     //pull the last word of the last array, and set that word as the lastWord state
     useEffect(() => {

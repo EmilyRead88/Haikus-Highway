@@ -247,6 +247,11 @@ nav ul {
   font-size: 2rem;
   display:inline-block;
   margin-bottom: 20px;
+  transition:0.5s;
+}
+.navLink:hover,
+.navLink:focus{
+  color:white;
 }
 
 
@@ -306,7 +311,9 @@ nav ul {
   display:flex;
   align-items: center;
   justify-content: center;
-
+}
+.results section{
+  width: 100%;
 }
 .wordBox{
   padding:40px;
